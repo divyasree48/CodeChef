@@ -1,0 +1,35 @@
+# cook your dish here
+t=int(input())
+while(t):
+    a,b=map(str,input().split())
+    n=int(input())
+    s=a+b
+    d1={}
+    d2={}
+    for i in s:
+        if i in d1.keys():
+            d1[i]+=1
+        else:
+            d1[i]=1
+    f=0
+    while(n):
+        c=input()
+        for i in c:
+            if i in d1.keys():
+                if i in d2.keys():
+                    d2[i]+=1
+                    if d2[i]>d1[i]:
+                        
+                        f=1
+                        break
+                else:
+                    d2[i]=1
+            else:
+                f=1
+                break
+        n-=1
+    if f==1:
+        print('NO')
+    else:
+        print('YES')
+    t-=1
